@@ -1,0 +1,231 @@
+@media screen and (orientation:portrait) {
+  .body {
+    background-color: cyan;
+    width: 100%;
+    margin: 0% 0% 0% 0%;
+    padding: 0%;
+    height: 100%;
+    font-size: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  .header {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0% 0% 0% 0%;
+  }
+  .logo, .nav {
+    float: left;
+  }
+  .logo {
+    width: 20%;
+    background-color: cyan;
+    padding: 3%;
+  }
+  .logoImg {
+    width: 100%;
+  }
+  .head {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    height: auto;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    background-color: green;
+    color: white;
+  }
+  .menuIcon {
+    width: 100%;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+  
+  }
+  .menuItem {
+    text-decoration: none;
+    margin: 3% 3% 3% 3%;
+    font-weight: bold;
+  }
+  nav ul {
+    list-style: none;
+    display: block;
+    gap: 40px;
+  }
+  nav ul li {
+    position: relative;
+  }
+  nav {
+    position: relative;
+    left: 30%;
+  }
+  .dropdown-list {
+    font-size: 90%;
+    font-weight: bold;
+    position: absolute;
+    top: 100%;
+    right: 0.5%;
+    width: 90%;
+    background: blanchedalmond;
+    list-style: none;
+    padding: 4% 5% 4% 5%;
+    margin: 0;
+    border: 1px solid gold;
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+    text-align: center;
+    border-radius: 7px;
+  }
+  .dropdown-container:hover .dropdown-list {
+    display: block;
+  } 
+  .dropdown-list, li {
+    display: block;
+  }
+  .dropdown-container:hover .dropdown-list {
+    display: block;
+  }
+  .dropdown-list li:hover {
+    background: gold;
+  } 
+  a:hover {
+    color: cyan;
+    text-decoration: none;
+  }
+  .loginToggle, .signupToggle, .createProfileToggle {
+    background-color: lightgreen;
+    border-radius: 5px;
+    width: 60%;
+    margin: 3% 1% 3% 1%;
+    padding: 2% 2% 2% 2%;
+    font-size: 120%;
+  }
+  .createProfileToggle {
+    width: 50%;
+    border-radius: 10px;
+  }
+  .create {
+    font-weight: normal;
+    font-size: 90%;
+  }
+  .login {
+    margin: 15% 10% 15% 15%;
+  }
+  .farmerProfile, .weatherWidget {
+    float: left;
+    width: 50%;
+    padding: 2% 2% 2% 2%;
+  }
+  .farmerProfile {
+    border-style: solid;
+    color: darkgreen;
+    border-radius: 10px;
+  }
+  .profilePic {
+    border-radius: 50%;
+    padding: 1% 2% 1% 1%;
+  }
+  .createFarm, .farmForm {
+    float: left;
+    width: 50%;
+    padding: 2% 2% 2% 2%;
+  }
+  .createFarm {
+    border-style: solid;
+    border-color: green;
+    border-radius: 10px;
+    border-width: 5px;
+    width: 47%;
+    margin: 1% 2% 2% 0%;
+  }
+  .farmForm {
+    background-color: green;
+    border-radius: 10px;
+  }
+  .formInput {
+    width: 100%;
+    border-radius: 7px;
+  }
+  .createFarmBtn {
+    margin: 2% 0% 0% 6%;
+    border-radius: 7px;
+    background-color: blanchedalmond;
+  }
+  .dashboardBtns {
+    width: 90%;
+  }
+  .togglesA .togglesB {
+    width: 30%;
+    padding: 2% 0% 2% 0%;
+    float: left;
+
+  }
+  .togglesC {
+    width: 100%;
+  }
+  .uploadImage {
+    background-color: lightgreen;
+    border-radius: 7px;
+    padding: 1% 1% 3% 1%;
+    margin: 2% 1% 1% 1%;
+  }
+  .analysis {
+    width: 100%;
+  }
+  .analyses {
+    font-size: 130%;
+  }
+  .footer {
+    background-color: bisque;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  .body {
+    background-color: cyan;
+    width: 100%;
+    margin: 0% 1% 0% 0%;
+    padding: 0%;
+    height: 100%;
+  }
+  .home {
+    width: 100%;
+    border-style: solid;
+  }
+  a {
+    text-decoration: none;
+  }
+  .header {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0% 1% 1% 1%;
+    padding-right: 10%;
+  }
+  .nav {
+    padding: 2% 4% 2% 6%;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    right: 10%;
+    font-size: 90%;
+  }
+  .nav-item {
+    margin: 1% 0% 0% 7%;
+    list-style: none;
+    display: inline;
+  }
+  .nav-link {
+    text-decoration: none;
+  }
+  .logoImg {
+    width: 60%;
+  } 
+  .footer {
+    background-color: bisque;
+  }
+  
+}
