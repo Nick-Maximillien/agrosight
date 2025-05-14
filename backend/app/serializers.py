@@ -13,15 +13,6 @@ class FarmSerializer(serializers.ModelSerializer):
         model = Farm
         fields = ['id', 'name', 'crop_type', 'size_hectares', 'location']
 
-class WeatherSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Weather
-        fields = '__all__' 
-
-class WeatherHistorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = WeatherHistory
-        fields = '__all__'              
 
 
 class DroneStatusSerializer(serializers.ModelSerializer):
@@ -62,11 +53,27 @@ class SignupSerializer(serializers.ModelSerializer):
         )
         return user
     
+
+
 class UploadedImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = UploadedImage
         fields = ['id', 'image', 'analysis', 'timestamp']
-        read_only_field = ['analysis', 'timestamp']    
+        read_only_fields = ['analysis', 'timestamp']
 
-              
+class Base64ImageListSerializer(serializers.Serializer):
+    images = serializers.ListField(
+        child=serializers.CharField(),
+        allow_empty=False
+    )
+
+class WeatherSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Weather
+        fields = '__all__'               
+
+class WeatherHistorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WeatherHistory
+        fields = '__all__'              
         

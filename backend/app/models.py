@@ -43,8 +43,11 @@ class Weather(models.Model):
     humidity = models.FloatField()
     weather = models.CharField(max_length=255)
     season = models.CharField(max_length=50)
-    forecast = models.JSONField()
+    forecast = models.JSONField()  # 3-day forecast or similar
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Weather for {self.farmer.user.username} at {self.timestamp}"
 
 class WeatherHistory(models.Model):
     farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE, related_name='weather_history')
@@ -52,9 +55,10 @@ class WeatherHistory(models.Model):
     humidity = models.FloatField()
     weather = models.CharField(max_length=255)
     season = models.CharField(max_length=50)
-    timestamp = models.DateTimeField(auto_now_add=True)    
+    timestamp = models.DateTimeField(auto_now_add=True)
 
-
+    def __str__(self):
+        return f"History for {self.farmer.user.username} at {self.timestamp}"
 
 # Drone Flight Model
     
@@ -78,8 +82,8 @@ class DroneData(models.Model):
     analysis = models.TextField(blank=True)
 
 class UploadedImage(models.Model):
-    farmer = models.ForeignKey(User, on_delete=models.CASCADE)
+    farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='uploads/')
-    analysis = models.TextField(blank=True, null=True)
-    timestamp = models.DateTimeField(auto_now_add=True)             
-    
+    analysis = models.TextField(blank=True, null=True)  # This remains blank until analyzed
+    timestamp = models.DateTimeField(auto_now_add=True)
+

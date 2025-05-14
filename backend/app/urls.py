@@ -8,9 +8,9 @@ from .views import (
         DashboardView, CreateFarmView,
           DeployDroneView,
            DroneStatusView, StopDroneView,
-            DroneDataListView, UploadMultipleImagesView, 
+            DroneDataListView, UploadImageView, 
              UploadHistoryView, CreateProfileView,
-              MyProfileView, WeatherView, WeatherHistoryView )
+              MyProfileView, WeatherAPIView, WeatherHistoryAPIView )
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = DefaultRouter()
@@ -28,9 +28,9 @@ urlpatterns = [
     path('stop-drone/', StopDroneView.as_view(), name='stop-drone'),
     path('drone-data/', DroneDataListView.as_view(), name='drone-data'),
     path('upload-images/history/', UploadHistoryView.as_view(), name='upload-history'),
-    path('upload-images/', UploadMultipleImagesView.as_view(), name='upload-images'),
+    path('upload-images/', UploadImageView.as_view(), name='upload-images'),
     path('farmer/', MyProfileView.as_view(), name='farmer'),
     path('create-profile/', CreateProfileView.as_view(), name='create-profile'),
-    path('weather/', WeatherView.as_view(), name='weather'),
-    path('weather/history/', WeatherHistoryView.as_view(), name='weather-history'),
+    path('weather/', WeatherAPIView.as_view(), name='weather'),
+    path('weather/history/', WeatherHistoryAPIView.as_view(), name='weather-history'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
