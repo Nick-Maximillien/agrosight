@@ -31,7 +31,7 @@ export default function ImageUpload() {
         });
 
         try {
-            const response = await fetch("http://localhost:8000/upload-images/", {
+            const response = await fetch("http://localhost:8001/upload-images/", {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,

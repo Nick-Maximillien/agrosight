@@ -68,6 +68,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://api-inference.huggingface.co",
     "https://api.openweathermap.org",
+    "http://localhost:8001",  # replace with your FastAPI domain/port
+    "http://127.0.0.1:8001",
 ]
 
 ROOT_URLCONF = 'agrosight.urls'

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Farmer, Farm, DroneData, DroneStatus, UploadedImage, Weather, WeatherHistory
+from .models import Farmer, Farm, DroneData, DroneStatus, Weather, WeatherHistory, Diagnosis
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -55,11 +55,6 @@ class SignupSerializer(serializers.ModelSerializer):
     
 
 
-class UploadedImageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UploadedImage
-        fields = ['id', 'image', 'analysis', 'timestamp']
-        read_only_fields = ['analysis', 'timestamp']
 
 class Base64ImageListSerializer(serializers.Serializer):
     images = serializers.ListField(
@@ -75,5 +70,11 @@ class WeatherSerializer(serializers.ModelSerializer):
 class WeatherHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = WeatherHistory
-        fields = '__all__'              
+        fields = '__all__'
+
+class DiagnosisSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Diagnosis
+        fields = '__all__'
+
         

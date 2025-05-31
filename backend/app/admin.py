@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Farmer, Farm, Weather, WeatherHistory, DroneStatus, DroneData, UploadedImage
+from .models import Farmer, Farm, Weather, WeatherHistory, DroneStatus, DroneData, Diagnosis
 
 # Register your models here.
 
@@ -9,5 +9,7 @@ admin.site.register(Weather)
 admin.site.register(WeatherHistory)
 admin.site.register(DroneStatus)
 admin.site.register(DroneData)
-admin.site.register(UploadedImage)
+admin.site.register(Diagnosis)
+
+
 

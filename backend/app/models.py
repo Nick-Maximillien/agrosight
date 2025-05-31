@@ -81,9 +81,16 @@ class DroneData(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     analysis = models.TextField(blank=True)
 
-class UploadedImage(models.Model):
-    farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='uploads/')
-    analysis = models.TextField(blank=True, null=True)  # This remains blank until analyzed
+
+class Diagnosis(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE, related_name="diagnoses")
+    phone_number = models.CharField(max_length=20)
+    image_name = models.CharField(max_length=255)
+    raw_result = models.TextField()
+    insight = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Diagnosis for {self.farmer.name} - {self.image_name}"
 
